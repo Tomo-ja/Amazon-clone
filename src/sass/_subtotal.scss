@@ -1,0 +1,27 @@
+@use './variable' as *;
+
+
+.subtotal{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 300px;
+	height: 150px;
+	padding: 20px;
+	background-color: #f3f3f3;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+
+	&__gift{
+		display: flex;
+		align-items: center;
+		&__checkbox{
+			margin-right: 5px;
+		}
+	}
+	&__button{
+		@include yellowButton();
+		height: 30px;
+		margin-top: 10px;
+	}
+}

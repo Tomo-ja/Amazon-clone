@@ -1,3 +1,5 @@
+@use './variable' as *;
+
 .product{
 	display: flex;
 	flex-direction: column;
@@ -28,10 +30,7 @@
 		margin-bottom: 15px;
 	}
 	&__button{
+		@include yellowButton();
 		margin-top: 10px;
-		padding: 5px 10px;
-		background-color: #F7CA00;
-		border: none;
-		color: #111;
 	}
 }
