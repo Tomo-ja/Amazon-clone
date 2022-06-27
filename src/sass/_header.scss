@@ -49,5 +49,16 @@
 				font-weight: bold;
 			}
 		}
+		&__basket{
+			flex-direction: row;
+			align-items: center;
+			color: white;
+			&__icon{
+
+			}
+			&__count{
+				margin-inline: 10px;
+			}
+		}
 	}
 }
