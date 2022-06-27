@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { StateProvider } from './context/stateProvider';
+import { StateProvider } from './context/StateProvider';
 import { initialState, reducer } from './context/reducer';
 
 const root = ReactDOM.createRoot(
