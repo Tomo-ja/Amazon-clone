@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Header() {
   return (
@@ -9,6 +10,7 @@ export default function Header() {
 				type="text"
 				className='header__search__input'
 			/>
+			<SearchIcon className='header__search__icon' />
 		</div>
 		<div className="header__nav">
 			<div className="header__nav__option">

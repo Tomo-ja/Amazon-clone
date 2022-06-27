@@ -13,18 +13,40 @@
 
 	}
 	&__search{
+		display: flex;
+		flex: 1;
+		align-items: center;
+		border-radius: 24px;
 		&__input{
-
+			width: calc(100% - 36px);
+			height: 100%;
+			padding: 10px;
+			border: none;
+			border-radius: 10px 0 0 10px;
+		}
+		&__icon{
+			width: 36px !important;
+			height: 36px !important;
+			background-color: #cd9042;
+			padding: 5px;
+			margin-left: -2px;
+			border-radius: 0 10px 10px 0;
 		}
 	}
 	&__nav{
+		display: flex;
+		justify-content: space-evenly;
 		&__option{
-
+			display: flex;
+			flex-direction: column;
+			margin-inline: 10px;
+			color: white;
 			&__lineOne{
-
+				font-size: 10px;
 			}
 			&__lineTwo{
-
+				font-size: 13px;
+				font-weight: bold;
 			}
 		}
 	}
