@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import user from './interface/User';
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCtLOZ6XYRLyiQaB334-kquj84X3FYsUsM",
@@ -17,4 +18,16 @@ const firebaseApp = initializeApp(firebaseConfig)
 const db = getFirestore(firebaseApp)
 const auth = getAuth(firebaseApp)
 
-export { db, auth }
+const logInWithEmailAndPassword = async (email: string, password: string): Promise<user> => {
+		const res = await signInWithEmailAndPassword(auth, email, password)
+		return res.user as user
+}
+
+
+const registerWithEmailAndPassword = async (email: string, password: string): Promise<user> => {
+		const res = await createUserWithEmailAndPassword(auth, email, password)
+		return res.user as user
+}
+
+
+export { db, auth, registerWithEmailAndPassword, logInWithEmailAndPassword }

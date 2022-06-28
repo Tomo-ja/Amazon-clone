@@ -1,21 +1,37 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { db, auth, registerWithEmailAndPassword, logInWithEmailAndPassword } from '../Firebase'
+import user from '../interface/User'
 
 export default function Login() {
+
+	const navigate = useNavigate()
+	let user: user | undefined = undefined
 
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
-	const signIn = (e: React.SyntheticEvent) => {
+	const signIn = async (e: React.SyntheticEvent) => {
 		e.preventDefault()
 
-		// firebase thing
+		try{
+			user = await logInWithEmailAndPassword(email, password)
+			navigate('/')
+		} catch(err) {
+			console.error(err)
+			alert(err)
+		}
 	}
 
-	const register = (e: React.MouseEvent<HTMLElement>) => {
+	const register = async (e: React.MouseEvent<HTMLElement>) => {
 		e.preventDefault()
-
-		// firebase thing
+		try{
+			user = await registerWithEmailAndPassword(email, password)
+			navigate('/')
+		} catch(err) {
+			console.error(err)
+			alert(err)
+		}
 	}
 
   return (
@@ -36,6 +52,7 @@ export default function Login() {
 					className='login__form__input' 
 					type="text" 
 					onChange={e => setEmail(e.target.value)}
+					required
 				/>
 				<h5 className='login__form__label'>Password</h5>
 				<input 
@@ -43,6 +60,7 @@ export default function Login() {
 					className='login__form__input' 
 					type="password" 
 					onChange={e => setPassword(e.target.value)}
+					required
 				/>
 
 				<button className='login__form__button'>Sign In</button>
