@@ -1,0 +1,56 @@
+@use './variable' as *;
+
+.login{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+
+	&__logo{
+		width: 100px;
+		margin: 20px auto;
+		object-fit: contain;
+	}
+	&__container{
+		width: 300px;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		border-radius: 5px;
+		border: 1px solid lightgray;
+		padding: 20px;
+		&__title{
+			font-weight: 500;
+			margin-bottom: 20px;
+		}
+		&__condition{
+			margin-top: 15px;
+			font-size: 12px;
+		}
+		&__resisterButton{
+			@include yellowButton();
+			width: 100%;
+			margin-top: 10px;
+			background-color: lightgray;
+
+		}
+	}
+	&__form{
+		&__label{
+			margin-bottom: 5px;
+
+		}
+		&__input{
+			width: 98%;
+			height: 30px;
+			margin-bottom: 10px;
+			background-color: white;
+		}
+		&__button{
+			@include yellowButton();
+			width: 100%;
+			margin-top: 10px;
+;		}
+	}
+}

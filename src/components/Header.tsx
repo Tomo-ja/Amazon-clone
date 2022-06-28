@@ -21,10 +21,12 @@ export default function Header() {
 			<SearchIcon className='header__search__icon' />
 		</div>
 		<div className="header__nav">
-			<div className="header__nav__option">
-				<span className='header__nav__option__lineOne'>Hello Guest</span>
-				<span className='header__nav__option__lineTwo'>Sign In</span>
-			</div>
+			<Link to='/login'>
+				<div className="header__nav__option">
+					<span className='header__nav__option__lineOne'>Hello Guest</span>
+					<span className='header__nav__option__lineTwo'>Sign In</span>
+				</div>
+			</Link>
 			<div className="header__nav__option">
 				<span className='header__nav__option__lineOne'>Returns</span>
 				<span className='header__nav__option__lineTwo'>& Orders</span>
