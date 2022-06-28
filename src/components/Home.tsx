@@ -12,6 +12,7 @@ export default function Home() {
 			/>
 			<div className="home__container__row">
 				<Product 
+					id={1234}
 					title='MAXJULI Polarized Sunglasses for Men and Women,UV Protection Rectangular Sun Glasses 8806'
 					image='https://images-na.ssl-images-amazon.com/images/I/41mXUVINFNL._AC_SR400,600_.jpg'
 					price={20.55}

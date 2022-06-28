@@ -2,7 +2,7 @@ import React from 'react'
 import product from '../interface/Product'
 import { useStateValue } from '../context/StateProvider'
 
-export default function Product({ title, image, price, rating }: product) {
+export default function Product({ id, title, image, price, rating }: product) {
 
 	const [ state, dispatch ] = useStateValue()
 
@@ -10,6 +10,7 @@ export default function Product({ title, image, price, rating }: product) {
 		dispatch({
 			type: 'ADD_TO_BASKET',
 			item:{
+				id: id,
 				title: title,
 				image:image,
 				price: price,

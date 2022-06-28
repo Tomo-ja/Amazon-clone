@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { Dispatch } from 'react'
 import product from '../interface/Product'
+import { useStateValue } from '../context/StateProvider'
+import reducerAction from '../interface/ReducerAction'
 
-export default function CheckoutProduct({ title, image, price, rating }: product) {
+
+export default function CheckoutProduct({ id, title, image, price, rating }: product) {
+
+	const [{ basket }, dispatch ]: [{basket: product[]}, Dispatch<reducerAction>] = useStateValue()
+
+	const removeFromBasket= () => {
+		dispatch({
+			type: "REMOVE_FROM_BASKET",
+			item: {
+				id: id,
+				title: title,
+				image: image,
+				price: price,
+				rating: rating
+			}
+		})
+	}
+
   return (
 	<div className='checkoutProduct'>
 		<img 
@@ -20,7 +39,7 @@ export default function CheckoutProduct({ title, image, price, rating }: product
 					<p>⭐</p>
 				))}
 			</div>
-			<button className='checkoutProduct__info__button'>Remove from Basket</button>
+			<button onClick={removeFromBasket} className='checkoutProduct__info__button'>Remove from Basket</button>
 		</div>
 	</div>
   )
