@@ -26,7 +26,7 @@ export default function Product({ title, image, price, rating }: product) {
 				<strong>{price}</strong>
 			</p>
 			<div className="product__rating">
-				{Array(rating).fill(0).map((_, i) => (
+				{Array(rating).fill(0).map((_) => (
 					<p className="product__rating__icon">⭐</p>
 				))}
 			</div>
