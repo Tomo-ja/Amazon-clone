@@ -1,0 +1,29 @@
+@use './variable' as *;
+.checkoutProduct{
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	&__image{
+		width: 180px;
+		height: 180px;
+		object-fit: contain;
+	}
+	&__info{
+		padding-left: 20px;
+		&__title{
+			font-size: 17px;
+			font-weight: bold;
+		}
+		&__price{
+
+		}
+		&__rating{
+			display: flex
+		}
+		&__button{
+			@include yellowButton();
+			margin-top: 10px;
+		}
+	}
+
+}
