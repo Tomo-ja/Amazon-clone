@@ -1,3 +1,9 @@
+@mixin hoverYellow {
+	&:hover{
+		color: #cd9042;
+	}
+}
+
 .header{
 	height: 60px;
 	display: flex;
@@ -41,6 +47,12 @@
 			flex-direction: column;
 			margin-inline: 10px;
 			color: white;
+			transition: color 0.2s;
+
+			&:hover{
+				color: #cd9042;
+				cursor: pointer;
+			}
 			&__lineOne{
 				font-size: 10px;
 			}

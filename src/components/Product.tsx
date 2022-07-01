@@ -1,12 +1,12 @@
 import Reac, {Dispatch} from 'react'
 import product from '../interface/Product'
 import { useStateValue } from '../context/StateProvider'
-import user from '../interface/User'
 import reducerAction from '../interface/ReducerAction'
+import context from '../interface/Context'
 
 export default function Product({ id, title, image, price, rating }: product) {
 
-	const [ {basket, user}, dispatch ]: [{basket: product[], user: user}, Dispatch<reducerAction>] = useStateValue()
+	const [ {basket, user}, dispatch ]: [context, Dispatch<reducerAction>] = useStateValue()
 
 	function addToBasket(){
 		dispatch({

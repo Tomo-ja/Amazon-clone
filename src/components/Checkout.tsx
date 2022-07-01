@@ -2,13 +2,12 @@ import React, { Dispatch } from 'react'
 import SubTotal from './SubTotal'
 import CheckoutProduct from './CheckoutProduct'
 import { useStateValue } from '../context/StateProvider'
-import product from '../interface/Product'
 import reducerAction from '../interface/ReducerAction'
-import user from '../interface/User'
+import context from '../interface/Context'
 
 export default function Checkout() {
 
-	const [{ basket, user }, dispatch ]: [{basket: product[], user: user}, Dispatch<reducerAction>] = useStateValue()
+	const [{ basket, user }, dispatch ]: [context, Dispatch<reducerAction>] = useStateValue()
 	
   return (
 	<div className='checkout'>

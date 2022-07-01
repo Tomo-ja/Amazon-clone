@@ -4,10 +4,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useStateValue } from '../context/StateProvider';
 import { auth } from '../Firebase';
+import context from '../interface/Context';
 
 export default function Header() {
 
-	const [ { basket, user } ] = useStateValue()
+	const [ { basket, user } ]: [context] = useStateValue()
 
 	function handleAuthentication(){
 		if (user){
@@ -32,7 +33,7 @@ export default function Header() {
 		<div className="header__nav">
 			<Link to={user?'/':'/login'}>
 				<div onClick={handleAuthentication} className="header__nav__option">
-					<span className='header__nav__option__lineOne'>Hello Guest</span>
+					<span className='header__nav__option__lineOne'>Hello {user ? user.email : 'Guest'}</span>
 					<span className='header__nav__option__lineTwo'>{user ? 'Sign Out': 'Sign In'}</span>
 				</div>
 			</Link>
