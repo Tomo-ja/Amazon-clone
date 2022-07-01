@@ -2,11 +2,12 @@ import React, { Dispatch } from 'react'
 import product from '../interface/Product'
 import { useStateValue } from '../context/StateProvider'
 import reducerAction from '../interface/ReducerAction'
+import user from '../interface/User'
 
 
 export default function CheckoutProduct({ id, title, image, price, rating }: product) {
 
-	const [{ basket }, dispatch ]: [{basket: product[]}, Dispatch<reducerAction>] = useStateValue()
+	const [{ basket, user }, dispatch ]: [{basket: product[], user: user}, Dispatch<reducerAction>] = useStateValue()
 
 	const removeFromBasket= () => {
 		dispatch({
@@ -17,7 +18,8 @@ export default function CheckoutProduct({ id, title, image, price, rating }: pro
 				image: image,
 				price: price,
 				rating: rating
-			}
+			},
+			user: user
 		})
 	}
 

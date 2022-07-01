@@ -1,10 +1,12 @@
-import React from 'react'
+import Reac, {Dispatch} from 'react'
 import product from '../interface/Product'
 import { useStateValue } from '../context/StateProvider'
+import user from '../interface/User'
+import reducerAction from '../interface/ReducerAction'
 
 export default function Product({ id, title, image, price, rating }: product) {
 
-	const [ state, dispatch ] = useStateValue()
+	const [ {basket, user}, dispatch ]: [{basket: product[], user: user}, Dispatch<reducerAction>] = useStateValue()
 
 	function addToBasket(){
 		dispatch({
@@ -15,7 +17,8 @@ export default function Product({ id, title, image, price, rating }: product) {
 				image:image,
 				price: price,
 				rating: rating,
-			}
+			},
+			user: user
 		})
 	}
   return (

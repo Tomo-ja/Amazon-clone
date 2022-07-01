@@ -3,6 +3,6 @@ import product from "./Product"
 
 
 export default interface context{
-	user: user | undefined,
+	user: user | null,
 	basket: product[]
 }

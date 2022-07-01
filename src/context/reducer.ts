@@ -4,7 +4,7 @@ import product from "../interface/Product"
 
 
 export const initialState: context = {
-	user: undefined,
+	user: null,
 	basket: []
 }
 
@@ -32,6 +32,11 @@ export const reducer = (state: context, action: reducerAction) => {
 			return {
 				...state,
 				basket: newBasket
+			}
+		case 'SET_USER':
+			return {
+				...state,
+				user: action.user
 			}
 		default:
 			return state
