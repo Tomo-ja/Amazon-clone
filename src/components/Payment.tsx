@@ -1,5 +1,5 @@
 import React, { Dispatch, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { StripeCardElementChangeEvent } from '@stripe/stripe-js'
 import CurrencyFormat from 'react-currency-format'
@@ -19,16 +19,30 @@ export default function Payment() {
 	const [disabled, setDisabled] = useState(true)
 	const [processing, setProcessing] = useState(false)
 	const [succeeded, setSucceeded] = useState(false)
-	const [clientSecret, setClientSecret] = useState(true)
+	const [clientSecret, setClientSecret] = useState("")
 
 	const stripe = useStripe()
 	const elements = useElements()
+	const navigate = useNavigate()
 
 	async function handleSubmit(e: React.SyntheticEvent){
 		e.preventDefault()
 		setProcessing(true)
 
-		// const payload = await stripe
+		const cardElement = elements?.getElement(CardElement)
+		if (cardElement){
+			const payload = await stripe?.confirmCardPayment(clientSecret, {
+				payment_method:{
+					card: cardElement
+				}
+			}).then(({paymentIntent})=> {
+
+				setSucceeded(true)
+				setError(null)
+				setProcessing(false)
+				navigate('/orders', { replace: true })
+			})
+		}
 	}
 
 	function handleChange(e: StripeCardElementChangeEvent){
