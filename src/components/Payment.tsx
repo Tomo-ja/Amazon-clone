@@ -11,6 +11,7 @@ import { getBasketTotal } from '../context/reducer'
 import context from '../interface/Context'
 import reducerAction from '../interface/ReducerAction'
 import axios from '../axios'
+import product from '../interface/Product'
 
 export default function Payment() {
 
@@ -40,6 +41,13 @@ export default function Payment() {
 				setSucceeded(true)
 				setError(null)
 				setProcessing(false)
+
+				dispatch({
+					type: 'EMPTY_BASKET',
+					user: user,
+					item: {} as product
+				})
+
 				navigate('/orders', { replace: true })
 			})
 		}

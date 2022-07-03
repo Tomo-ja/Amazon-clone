@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Checkout from './components/Checkout';
 import Payment from './components/Payment';
+import Orders from './components/Orders';
 import './App.scss';
 import { auth } from './Firebase'
 import { useStateValue } from './context/StateProvider';
@@ -61,6 +62,11 @@ function App() {
             </Elements>
           </>
         }/>
+        <Route path='/orders' element={
+          <>
+            <Orders />
+          </>
+        } />
       </Routes>
      </div>
     </Router>
