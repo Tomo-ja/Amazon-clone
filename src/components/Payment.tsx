@@ -10,7 +10,7 @@ import { useStateValue } from '../context/StateProvider'
 import { getBasketTotal } from '../context/reducer'
 import context from '../interface/Context'
 import reducerAction from '../interface/ReducerAction'
-import axios from 'axios'
+import axios from '../axios'
 
 export default function Payment() {
 
@@ -50,12 +50,14 @@ export default function Payment() {
 		setError(e.error ? e.error.message: "" )
 	}
 
+	console.log('client secret is ', clientSecret)
 	useEffect(()=>{
 		const getClientSecret = async () => {
 			const response = await axios({
 				method: 'post',
-				url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+				url: `/payments/create?total=${Math.floor(getBasketTotal(basket) * 100)}`
 			})
+			console.log(response.data)
 			setClientSecret(response.data.clientSecret)
 		}
 		getClientSecret()
