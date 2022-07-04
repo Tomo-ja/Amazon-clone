@@ -64,6 +64,7 @@ function App() {
         }/>
         <Route path='/orders' element={
           <>
+            <Header />
             <Orders />
           </>
         } />

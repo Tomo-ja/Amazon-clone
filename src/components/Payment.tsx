@@ -1,4 +1,4 @@
-import React, { Dispatch, useEffect, useState } from 'react'
+import React, { Dispatch, useEffect, useId, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { StripeCardElementChangeEvent } from '@stripe/stripe-js'
@@ -12,6 +12,9 @@ import context from '../interface/Context'
 import reducerAction from '../interface/ReducerAction'
 import axios from '../axios'
 import product from '../interface/Product'
+import firebase from 'firebase/compat/app';
+import { doc, setDoc, updateDoc } from "firebase/firestore"; 
+import { db } from '../Firebase'
 
 export default function Payment() {
 
@@ -37,6 +40,13 @@ export default function Payment() {
 					card: cardElement
 				}
 			}).then(({paymentIntent})=> {
+
+				const completePaymentDocRef = doc(db, 'users', String(user?.uid), 'orders', String(paymentIntent?.id))
+				setDoc(completePaymentDocRef, {
+					basket: basket,
+					amount: paymentIntent?.amount,
+					created: paymentIntent?.created
+				})
 
 				setSucceeded(true)
 				setError(null)

@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Orders() {
   return (
-	<div>Orders</div>
+	<div className='orders'>
+		<h1>Your Orders</h1>
+	</div>
   )
 }
