@@ -1,3 +1,5 @@
+@use './variable' as *;
+
 .payment{
 	background-color: #fff;
 	&__container{
@@ -29,6 +31,22 @@
 		}
 		&__details{
 			flex: 0.8;
+			&__input{
+				max-width: 450px;
+				margin-bottom: 20px;
+			}
+			&__price{
+
+			}
+			&__button{
+				@include yellowButton();
+				margin-top: 20px;
+				font-size: 18px;
+			}
+			&__button:disabled{
+				background-color: lightgray;
+				color: gray;
+			}
 		}
 	}
 }

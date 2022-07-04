@@ -1,4 +1,4 @@
-import React, { Dispatch, useEffect, useId, useState } from 'react'
+import React, { Dispatch, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { StripeCardElementChangeEvent } from '@stripe/stripe-js'
@@ -8,12 +8,14 @@ import CheckoutProduct from './CheckoutProduct'
 
 import { useStateValue } from '../context/StateProvider'
 import { getBasketTotal } from '../context/reducer'
+import axios from '../axios'
+
 import context from '../interface/Context'
 import reducerAction from '../interface/ReducerAction'
-import axios from '../axios'
 import product from '../interface/Product'
-import firebase from 'firebase/compat/app';
-import { doc, setDoc, updateDoc } from "firebase/firestore"; 
+
+
+import { doc, setDoc } from "firebase/firestore"; 
 import { db } from '../Firebase'
 
 export default function Payment() {
@@ -116,7 +118,7 @@ export default function Payment() {
 				</div>
 				<div className="payment__section__details">
 					<form onSubmit={handleSubmit}>
-						<CardElement onChange={handleChange}/>
+						<CardElement onChange={handleChange} className='payment__section__details__input'/>
 						<div className="payment__section__details__price">
 							<CurrencyFormat
 								renderText={(value) => (
