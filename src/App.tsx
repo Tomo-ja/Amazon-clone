@@ -20,7 +20,6 @@ function App() {
 
   useEffect(()=> {
     auth.onAuthStateChanged( authUser => {
-
       if (authUser){
           dispatch({
             type: 'SET_USER',

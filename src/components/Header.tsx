@@ -15,9 +15,6 @@ export default function Header() {
 			auth.signOut()
 		}
 	}
-
-
-
   return (
 	<div className='header'>
 		<Link to='/'>
@@ -37,10 +34,12 @@ export default function Header() {
 					<span className='header__nav__option__lineTwo'>{user ? 'Sign Out': 'Sign In'}</span>
 				</div>
 			</Link>
+			<Link to="/orders">
 			<div className="header__nav__option">
 				<span className='header__nav__option__lineOne'>Returns</span>
 				<span className='header__nav__option__lineTwo'>& Orders</span>
 			</div>
+			</Link>
 			<div className="header__nav__option">
 				<span className='header__nav__option__lineOne'>Your</span>
 				<span className='header__nav__option__lineTwo'>Prime</span>

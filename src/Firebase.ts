@@ -31,4 +31,4 @@ const registerWithEmailAndPassword = async (email: string, password: string): Pr
 }
 
 
-export { db, auth, registerWithEmailAndPassword, logInWithEmailAndPassword }
+export { db, auth, registerWithEmailAndPassword, logInWithEmailAndPassword, firebaseApp }
