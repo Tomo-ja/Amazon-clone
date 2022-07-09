@@ -128,6 +128,7 @@ export default function Payment() {
 								value={getBasketTotal(basket)}
 								displayType={"text"}
 								thousandSeparator={true}
+								fixedDecimalScale={true}
 								prefix={"$"}
 							/>
 							<button 
