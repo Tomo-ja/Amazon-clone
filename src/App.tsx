@@ -75,3 +75,6 @@ function App() {
 
 export default App;
 
+// to use this app, 
+// $firebase emulators:start on amazon/functions
+// $npm start on amazon
