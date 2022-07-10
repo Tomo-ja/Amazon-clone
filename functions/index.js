@@ -11,22 +11,21 @@ app.use(express.json());
 
 app.get("/", (requrest, response) => response.status(200).send("hello"));
 
-app.post("/payments/create", async (request, response) => {
-		console.log(response.status)
-		const total = request.query.total;
-		console.log("Payment request: ", total);
+// need to make it with async and await in front of paymentIntentsCreate
+app.post("/payments/create", (request, response) => {
+  try {
+    const total = request.query.total;
 
-		const paymentIntent = await stripe.paymentIntents.create({
-			amount: total,
-			currency: "usd"
-		});
-
-		response.status(201).send({
-			clientSecret: paymentIntent.client_secret,
-		});
-	})
+    const paymentIntent = stripe.paymentIntents.create({
+      amount: total,
+      currency: "usd",
+    });
+    response.status(201).send({
+      clientSecret: paymentIntent.client_secret,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 exports.api = functions.https.onRequest(app);
-
-
-//  http://localhost:5001/fir-3d151/us-central1/api
