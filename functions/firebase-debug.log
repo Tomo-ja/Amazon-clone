@@ -1,0 +1,304 @@
+[debug] [2022-07-10T20:57:26.429Z] ----------------------------------------------------------------------
+[debug] [2022-07-10T20:57:26.430Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2022-07-10T20:57:26.430Z] CLI Version:   11.2.0
+[debug] [2022-07-10T20:57:26.430Z] Platform:      darwin
+[debug] [2022-07-10T20:57:26.430Z] Node Version:  v16.13.1
+[debug] [2022-07-10T20:57:26.431Z] Time:          Sun Jul 10 2022 13:57:26 GMT-0700 (Pacific Daylight Time)
+[debug] [2022-07-10T20:57:26.431Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-10T20:57:26.470Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-10T20:57:26.470Z] > authorizing via signed-in user (tomonao.hj@gmail.com)
+[debug] [2022-07-10T20:57:26.470Z] [iam] checking project fir-3d151 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-07-10T20:57:26.471Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions [none]
+[debug] [2022-07-10T20:57:26.471Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-07-10T20:57:26.638Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions 200
+[debug] [2022-07-10T20:57:26.638Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-07-10T20:57:26.639Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-07-10T20:57:26.639Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-07-10T20:57:26.850Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-07-10T20:57:26.850Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fir-3d151'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2022-07-10T20:57:27.462Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 [none]
+[debug] [2022-07-10T20:57:27.611Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 200
+[debug] [2022-07-10T20:57:27.611Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 {"projectId":"fir-3d151","projectNumber":"987482985000","displayName":"amazon","name":"projects/fir-3d151","resources":{"hostingSite":"fir-3d151","storageBucket":"fir-3d151.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2022-07-10T20:57:27.613Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-07-10T20:57:27.614Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-07-10T20:57:27.614Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com [none]
+[debug] [2022-07-10T20:57:27.615Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/artifactregistry.googleapis.com [none]
+[debug] [2022-07-10T20:57:28.043Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/runtimeconfig.googleapis.com 200
+[debug] [2022-07-10T20:57:28.043Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-07-10T20:57:28.054Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/artifactregistry.googleapis.com 200
+[debug] [2022-07-10T20:57:28.054Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/artifactregistry.googleapis.com [omitted]
+[debug] [2022-07-10T20:57:28.055Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudfunctions.googleapis.com 200
+[debug] [2022-07-10T20:57:28.055Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-07-10T20:57:28.056Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com 200
+[debug] [2022-07-10T20:57:28.056Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com [omitted]
+[warn] ⚠  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2022-07-10T20:57:28.057Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2022-07-10T20:57:28.935Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com:enable 200
+[debug] [2022-07-10T20:57:28.936Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2022-07-10T20:57:38.940Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com [none]
+[debug] [2022-07-10T20:57:39.425Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com 200
+[debug] [2022-07-10T20:57:39.425Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-07-10T20:57:39.430Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151/adminSdkConfig [none]
+[debug] [2022-07-10T20:57:39.611Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151/adminSdkConfig 200
+[debug] [2022-07-10T20:57:39.611Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151/adminSdkConfig {"projectId":"fir-3d151","storageBucket":"fir-3d151.appspot.com","locationId":"us-central"}
+[debug] [2022-07-10T20:57:39.612Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-3d151/configs [none]
+[debug] [2022-07-10T20:57:39.784Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-3d151/configs 200
+[debug] [2022-07-10T20:57:39.785Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-3d151/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-07-10T20:57:39.788Z] Validating nodejs source
+[debug] [2022-07-10T20:57:40.368Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expess": "^0.0.1-security",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^9.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-07-10T20:57:40.369Z] Building nodejs source
+[debug] [2022-07-10T20:57:40.370Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-07-10T20:57:40.499Z] Serving at port 9005
+
+[debug] [2022-07-10T20:57:40.562Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-07-10T20:57:40.566Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/tomo/Desktop/React/amazon/functions (73.21 KB) for uploading 
+[debug] [2022-07-10T20:57:40.600Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/-/functions [none]
+[debug] [2022-07-10T20:57:41.128Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/-/functions 200
+[debug] [2022-07-10T20:57:41.128Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/-/functions {}
+[debug] [2022-07-10T20:57:41.129Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/fir-3d151/locations/-/functions [none]
+[debug] [2022-07-10T20:57:41.936Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/fir-3d151/locations/-/functions 200
+[debug] [2022-07-10T20:57:41.936Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/fir-3d151/locations/-/functions {}
+[debug] [2022-07-10T20:57:41.945Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 [none]
+[debug] [2022-07-10T20:57:42.085Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 200
+[debug] [2022-07-10T20:57:42.085Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 {"projectId":"fir-3d151","projectNumber":"987482985000","displayName":"amazon","name":"projects/fir-3d151","resources":{"hostingSite":"fir-3d151","storageBucket":"fir-3d151.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[debug] [2022-07-10T20:57:42.085Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2022-07-10T20:57:42.086Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions [none]
+[debug] [2022-07-10T20:57:42.086Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2022-07-10T20:57:42.175Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions 200
+[debug] [2022-07-10T20:57:42.175Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2022-07-10T20:57:42.176Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2022-07-10T20:57:42.176Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-07-10T20:57:42.176Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-07-10T20:57:49.926Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-07-10T20:57:49.927Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/60039e69-b2c5-4375-8b96-86f6bc5b2b3d.zip?GoogleAccessId=service-987482985000@gcf-admin-robot.iam.gserviceaccount.com&Expires=1657488469&Signature=LbdHZWghuUkdSqdOenpGLNvpMbXLcExjsI3zWOhRSASqMZnchXqOctqxB%2BssVDS1REYaA%2FT7ndrRMZpdGXtWJx3pP%2BTmiVLejCw19Hi%2Bl4hWzUx8304cYw3tqprDuJXNMv8x%2Fi6IBHeL7nnDBfMeHiwh6afxPykQHjMZH4gmdfCxg%2FtZzMl5t5bQ1IkAq%2Fnrp318m9jY5tjC77R%2B0xou%2FWYsToq0t1YKqIs5%2F6IYMbFx1BnRXmjmKVP%2FxUXQ%2BKlko2hyF50697%2FI%2BIPp82hqBI3vJGsNIH6Hwo7AXvpBHa8pEu8bOuYL6j9cemyMc%2BX0oEZf0RkpmvqaBi2JqHudsQ%3D%3D"}
+[debug] [2022-07-10T20:57:49.929Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/60039e69-b2c5-4375-8b96-86f6bc5b2b3d.zip GoogleAccessId=service-987482985000%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1657488469&Signature=LbdHZWghuUkdSqdOenpGLNvpMbXLcExjsI3zWOhRSASqMZnchXqOctqxB%2BssVDS1REYaA%2FT7ndrRMZpdGXtWJx3pP%2BTmiVLejCw19Hi%2Bl4hWzUx8304cYw3tqprDuJXNMv8x%2Fi6IBHeL7nnDBfMeHiwh6afxPykQHjMZH4gmdfCxg%2FtZzMl5t5bQ1IkAq%2Fnrp318m9jY5tjC77R%2B0xou%2FWYsToq0t1YKqIs5%2F6IYMbFx1BnRXmjmKVP%2FxUXQ%2BKlko2hyF50697%2FI%2BIPp82hqBI3vJGsNIH6Hwo7AXvpBHa8pEu8bOuYL6j9cemyMc%2BX0oEZf0RkpmvqaBi2JqHudsQ%3D%3D
+[debug] [2022-07-10T20:57:49.929Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/60039e69-b2c5-4375-8b96-86f6bc5b2b3d.zip [stream]
+[debug] [2022-07-10T20:57:50.333Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/60039e69-b2c5-4375-8b96-86f6bc5b2b3d.zip 200
+[debug] [2022-07-10T20:57:50.333Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/60039e69-b2c5-4375-8b96-86f6bc5b2b3d.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function api(us-central1)... 
+[debug] [2022-07-10T20:57:50.338Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions [none]
+[debug] [2022-07-10T20:57:50.339Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions {"name":"projects/fir-3d151/locations/us-central1/functions/api","sourceUploadUrl":"https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/60039e69-b2c5-4375-8b96-86f6bc5b2b3d.zip?GoogleAccessId=service-987482985000@gcf-admin-robot.iam.gserviceaccount.com&Expires=1657488469&Signature=LbdHZWghuUkdSqdOenpGLNvpMbXLcExjsI3zWOhRSASqMZnchXqOctqxB%2BssVDS1REYaA%2FT7ndrRMZpdGXtWJx3pP%2BTmiVLejCw19Hi%2Bl4hWzUx8304cYw3tqprDuJXNMv8x%2Fi6IBHeL7nnDBfMeHiwh6afxPykQHjMZH4gmdfCxg%2FtZzMl5t5bQ1IkAq%2Fnrp318m9jY5tjC77R%2B0xou%2FWYsToq0t1YKqIs5%2F6IYMbFx1BnRXmjmKVP%2FxUXQ%2BKlko2hyF50697%2FI%2BIPp82hqBI3vJGsNIH6Hwo7AXvpBHa8pEu8bOuYL6j9cemyMc%2BX0oEZf0RkpmvqaBi2JqHudsQ%3D%3D","entryPoint":"api","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"fir-3d151\",\"storageBucket\":\"fir-3d151.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"fir-3d151"},"timeout":"60s"}
+[debug] [2022-07-10T20:57:50.642Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions 403
+[debug] [2022-07-10T20:57:50.642Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions {"error":{"code":403,"message":"Cloud Functions uses Artifact Registry to store function docker images. Artifact Registry API is not enabled in your project. To enable the API, visit https://console.developers.google.com/apis/api/artifactregistry.googleapis.com/overview?project=987482985000 or use the gcloud command 'gcloud services enable artifactregistry.googleapis.com' then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED"}}
+[warn] ⚠  functions: failed to create function projects/fir-3d151/locations/us-central1/functions/api 
+[error] Failed to create function projects/fir-3d151/locations/us-central1/functions/api
+[debug] [2022-07-10T20:57:50.649Z] Total Function Deployment time: 308
+[debug] [2022-07-10T20:57:50.649Z] 1 Functions Deployed
+[debug] [2022-07-10T20:57:50.649Z] 1 Functions Errored
+[debug] [2022-07-10T20:57:50.649Z] 0 Function Deployments Aborted
+[debug] [2022-07-10T20:57:50.649Z] Average Function Deployment time: 308
+[info] 
+[info] Functions deploy had errors with the following functions:
+	api(us-central1)
+[debug] [2022-07-10T20:57:50.699Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2022-07-10T20:57:50.701Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/fir-3d151/locations/us-central1/repositories/gcf-artifacts/packages/api [none]
+[debug] [2022-07-10T20:57:50.701Z] >>> [apiv2][query] GET https://us.gcr.io/v2/fir-3d151/gcf/us-central1/tags/list [none]
+[debug] [2022-07-10T20:57:51.098Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/fir-3d151/locations/us-central1/repositories/gcf-artifacts/packages/api 403
+[debug] [2022-07-10T20:57:51.098Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/fir-3d151/locations/us-central1/repositories/gcf-artifacts/packages/api {"error":{"code":403,"message":"Artifact Registry API has not been used in project 987482985000 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/artifactregistry.googleapis.com/overview?project=987482985000 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/artifactregistry.googleapis.com/overview?project=987482985000"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"service":"artifactregistry.googleapis.com","consumer":"projects/987482985000"}}]}}
+[debug] [2022-07-10T20:57:51.666Z] <<< [apiv2][status] GET https://us.gcr.io/v2/fir-3d151/gcf/us-central1/tags/list 200
+[debug] [2022-07-10T20:57:51.667Z] <<< [apiv2][body] GET https://us.gcr.io/v2/fir-3d151/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"fir-3d151/gcf/us-central1","tags":[]}
+[debug] [2022-07-10T20:57:51.667Z] Could not find image for function projects/fir-3d151/locations/us-central1/functions/api
+[warn] ⚠  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/fir-3d151/us-central1/gcf-artifacts 
+[debug] [2022-07-10T20:57:51.745Z] Error: Failed to create function api in region us-central1
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:41:11
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Fabricator.createV1Function (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:167:32)
+    at async Fabricator.createEndpoint (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:118:13)
+    at async handle (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:77:17)
+[error] 
+[error] Error: There was an error deploying functions
+[debug] [2022-07-10T21:01:36.917Z] ----------------------------------------------------------------------
+[debug] [2022-07-10T21:01:36.918Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2022-07-10T21:01:36.919Z] CLI Version:   11.2.0
+[debug] [2022-07-10T21:01:36.919Z] Platform:      darwin
+[debug] [2022-07-10T21:01:36.919Z] Node Version:  v16.13.1
+[debug] [2022-07-10T21:01:36.922Z] Time:          Sun Jul 10 2022 14:01:36 GMT-0700 (Pacific Daylight Time)
+[debug] [2022-07-10T21:01:36.923Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-10T21:01:36.958Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-10T21:01:36.958Z] > authorizing via signed-in user (tomonao.hj@gmail.com)
+[debug] [2022-07-10T21:01:36.958Z] [iam] checking project fir-3d151 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2022-07-10T21:01:36.959Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions [none]
+[debug] [2022-07-10T21:01:36.959Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-07-10T21:01:37.128Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions 200
+[debug] [2022-07-10T21:01:37.128Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2022-07-10T21:01:37.129Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2022-07-10T21:01:37.129Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2022-07-10T21:01:37.316Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2022-07-10T21:01:37.317Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/fir-3d151/serviceAccounts/fir-3d151@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'fir-3d151'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[debug] [2022-07-10T21:01:37.980Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 [none]
+[debug] [2022-07-10T21:01:38.115Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 200
+[debug] [2022-07-10T21:01:38.116Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 {"projectId":"fir-3d151","projectNumber":"987482985000","displayName":"amazon","name":"projects/fir-3d151","resources":{"hostingSite":"fir-3d151","storageBucket":"fir-3d151.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2022-07-10T21:01:38.117Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudfunctions.googleapis.com [none]
+[debug] [2022-07-10T21:01:38.118Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/runtimeconfig.googleapis.com [none]
+[debug] [2022-07-10T21:01:38.119Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com [none]
+[debug] [2022-07-10T21:01:38.119Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/artifactregistry.googleapis.com [none]
+[debug] [2022-07-10T21:01:38.402Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/artifactregistry.googleapis.com 200
+[debug] [2022-07-10T21:01:38.402Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/artifactregistry.googleapis.com [omitted]
+[debug] [2022-07-10T21:01:38.594Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudfunctions.googleapis.com 200
+[debug] [2022-07-10T21:01:38.595Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2022-07-10T21:01:38.597Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/runtimeconfig.googleapis.com 200
+[debug] [2022-07-10T21:01:38.597Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2022-07-10T21:01:38.598Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com 200
+[debug] [2022-07-10T21:01:38.598Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/fir-3d151/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2022-07-10T21:01:38.598Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151/adminSdkConfig [none]
+[debug] [2022-07-10T21:01:38.760Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151/adminSdkConfig 200
+[debug] [2022-07-10T21:01:38.761Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151/adminSdkConfig {"projectId":"fir-3d151","storageBucket":"fir-3d151.appspot.com","locationId":"us-central"}
+[debug] [2022-07-10T21:01:38.761Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-3d151/configs [none]
+[debug] [2022-07-10T21:01:39.100Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-3d151/configs 200
+[debug] [2022-07-10T21:01:39.101Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/fir-3d151/configs {}
+[info] i  functions: preparing codebase default for deployment 
+[debug] [2022-07-10T21:01:39.104Z] Validating nodejs source
+[debug] [2022-07-10T21:01:39.617Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expess": "^0.0.1-security",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "stripe": "^9.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-07-10T21:01:39.617Z] Building nodejs source
+[debug] [2022-07-10T21:01:39.618Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-07-10T21:01:39.724Z] Serving at port 9005
+
+[debug] [2022-07-10T21:01:39.778Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-07-10T21:01:39.781Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/tomo/Desktop/React/amazon/functions (73.21 KB) for uploading 
+[debug] [2022-07-10T21:01:39.809Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/-/functions [none]
+[debug] [2022-07-10T21:01:40.478Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/-/functions 200
+[debug] [2022-07-10T21:01:40.478Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/-/functions {}
+[debug] [2022-07-10T21:01:40.479Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/fir-3d151/locations/-/functions [none]
+[debug] [2022-07-10T21:01:41.248Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/fir-3d151/locations/-/functions 200
+[debug] [2022-07-10T21:01:41.249Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/fir-3d151/locations/-/functions {}
+[debug] [2022-07-10T21:01:41.257Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 [none]
+[debug] [2022-07-10T21:01:41.381Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 200
+[debug] [2022-07-10T21:01:41.382Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/fir-3d151 {"projectId":"fir-3d151","projectNumber":"987482985000","displayName":"amazon","name":"projects/fir-3d151","resources":{"hostingSite":"fir-3d151","storageBucket":"fir-3d151.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[debug] [2022-07-10T21:01:41.383Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2022-07-10T21:01:41.383Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions [none]
+[debug] [2022-07-10T21:01:41.383Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2022-07-10T21:01:41.497Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions 200
+[debug] [2022-07-10T21:01:41.498Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/fir-3d151:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2022-07-10T21:01:41.498Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2022-07-10T21:01:41.499Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2022-07-10T21:01:41.499Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2022-07-10T21:01:42.244Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2022-07-10T21:01:42.245Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/51a149ae-da43-4637-a7bd-0425547e313d.zip?GoogleAccessId=service-987482985000@gcf-admin-robot.iam.gserviceaccount.com&Expires=1657488702&Signature=ARgjt1LN1xwcVzl%2FMPLOiE6%2Ba23xCVJwqIenB0NitYRw1UzE9Vtj9VnZ0e9bPw0OnjnphnrvtggdWNMOuF%2B%2Feikdj0xoPYPgCrqmJ83nUJk5%2F6Ay0BP%2F5dJWHL9niEP%2FXSvB8OWcPIgjzYDMZ9IhjXZFc%2BSvBFvPopZhpUUJDBRBXZTHpiITk0QjEil8lZOm1sHJSqjOrA0SUgkACQ52CBrPmGfth%2B0EWPouXT4q%2FJbS1DIXkoGhGtL86aQzZyYs93%2FNh9x6bxkrJapmdgSQPPi0DpSvsKQXh5xHKnZijGOBTwwYQG2263xruBnZHNOuKgKFE8i%2FjRAD%2F4TFt6bYjQ%3D%3D"}
+[debug] [2022-07-10T21:01:42.246Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/51a149ae-da43-4637-a7bd-0425547e313d.zip GoogleAccessId=service-987482985000%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1657488702&Signature=ARgjt1LN1xwcVzl%2FMPLOiE6%2Ba23xCVJwqIenB0NitYRw1UzE9Vtj9VnZ0e9bPw0OnjnphnrvtggdWNMOuF%2B%2Feikdj0xoPYPgCrqmJ83nUJk5%2F6Ay0BP%2F5dJWHL9niEP%2FXSvB8OWcPIgjzYDMZ9IhjXZFc%2BSvBFvPopZhpUUJDBRBXZTHpiITk0QjEil8lZOm1sHJSqjOrA0SUgkACQ52CBrPmGfth%2B0EWPouXT4q%2FJbS1DIXkoGhGtL86aQzZyYs93%2FNh9x6bxkrJapmdgSQPPi0DpSvsKQXh5xHKnZijGOBTwwYQG2263xruBnZHNOuKgKFE8i%2FjRAD%2F4TFt6bYjQ%3D%3D
+[debug] [2022-07-10T21:01:42.246Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/51a149ae-da43-4637-a7bd-0425547e313d.zip [stream]
+[debug] [2022-07-10T21:01:42.508Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/51a149ae-da43-4637-a7bd-0425547e313d.zip 200
+[debug] [2022-07-10T21:01:42.509Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/51a149ae-da43-4637-a7bd-0425547e313d.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function api(us-central1)... 
+[debug] [2022-07-10T21:01:42.515Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions [none]
+[debug] [2022-07-10T21:01:42.515Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions {"name":"projects/fir-3d151/locations/us-central1/functions/api","sourceUploadUrl":"https://storage.googleapis.com/uploads-924221078383.us-central1.cloudfunctions.appspot.com/51a149ae-da43-4637-a7bd-0425547e313d.zip?GoogleAccessId=service-987482985000@gcf-admin-robot.iam.gserviceaccount.com&Expires=1657488702&Signature=ARgjt1LN1xwcVzl%2FMPLOiE6%2Ba23xCVJwqIenB0NitYRw1UzE9Vtj9VnZ0e9bPw0OnjnphnrvtggdWNMOuF%2B%2Feikdj0xoPYPgCrqmJ83nUJk5%2F6Ay0BP%2F5dJWHL9niEP%2FXSvB8OWcPIgjzYDMZ9IhjXZFc%2BSvBFvPopZhpUUJDBRBXZTHpiITk0QjEil8lZOm1sHJSqjOrA0SUgkACQ52CBrPmGfth%2B0EWPouXT4q%2FJbS1DIXkoGhGtL86aQzZyYs93%2FNh9x6bxkrJapmdgSQPPi0DpSvsKQXh5xHKnZijGOBTwwYQG2263xruBnZHNOuKgKFE8i%2FjRAD%2F4TFt6bYjQ%3D%3D","entryPoint":"api","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"fir-3d151\",\"storageBucket\":\"fir-3d151.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"fir-3d151"},"timeout":"60s"}
+[debug] [2022-07-10T21:01:42.888Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions 403
+[debug] [2022-07-10T21:01:42.888Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/fir-3d151/locations/us-central1/functions {"error":{"code":403,"message":"Cloud Functions uses Artifact Registry to store function docker images. Artifact Registry API is not enabled in your project. To enable the API, visit https://console.developers.google.com/apis/api/artifactregistry.googleapis.com/overview?project=987482985000 or use the gcloud command 'gcloud services enable artifactregistry.googleapis.com' then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED"}}
+[warn] ⚠  functions: failed to create function projects/fir-3d151/locations/us-central1/functions/api 
+[error] Failed to create function projects/fir-3d151/locations/us-central1/functions/api
+[debug] [2022-07-10T21:01:42.895Z] Total Function Deployment time: 378
+[debug] [2022-07-10T21:01:42.895Z] 1 Functions Deployed
+[debug] [2022-07-10T21:01:42.895Z] 1 Functions Errored
+[debug] [2022-07-10T21:01:42.895Z] 0 Function Deployments Aborted
+[debug] [2022-07-10T21:01:42.895Z] Average Function Deployment time: 377
+[info] 
+[info] Functions deploy had errors with the following functions:
+	api(us-central1)
+[debug] [2022-07-10T21:01:42.947Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2022-07-10T21:01:42.948Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/fir-3d151/locations/us-central1/repositories/gcf-artifacts/packages/api [none]
+[debug] [2022-07-10T21:01:42.949Z] >>> [apiv2][query] GET https://us.gcr.io/v2/fir-3d151/gcf/us-central1/tags/list [none]
+[debug] [2022-07-10T21:01:43.062Z] <<< [apiv2][status] GET https://us.gcr.io/v2/fir-3d151/gcf/us-central1/tags/list 200
+[debug] [2022-07-10T21:01:43.062Z] <<< [apiv2][body] GET https://us.gcr.io/v2/fir-3d151/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"fir-3d151/gcf/us-central1","tags":[]}
+[debug] [2022-07-10T21:01:43.062Z] Could not find image for function projects/fir-3d151/locations/us-central1/functions/api
+[debug] [2022-07-10T21:01:43.298Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/fir-3d151/locations/us-central1/repositories/gcf-artifacts/packages/api 403
+[debug] [2022-07-10T21:01:43.298Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/fir-3d151/locations/us-central1/repositories/gcf-artifacts/packages/api {"error":{"code":403,"message":"Artifact Registry API has not been used in project 987482985000 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/artifactregistry.googleapis.com/overview?project=987482985000 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/artifactregistry.googleapis.com/overview?project=987482985000"}]},{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"service":"artifactregistry.googleapis.com","consumer":"projects/987482985000"}}]}}
+[warn] ⚠  functions: Unhandled error cleaning up build images. This could result in a small monthly bill if not corrected. You can attempt to delete these images by redeploying or you can delete them manually at https://console.cloud.google.com/artifacts/docker/fir-3d151/us-central1/gcf-artifacts 
+[debug] [2022-07-10T21:01:43.348Z] Error: Failed to create function api in region us-central1
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:41:11
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Fabricator.createV1Function (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:167:32)
+    at async Fabricator.createEndpoint (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:118:13)
+    at async handle (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:77:17)
+[error] 
+[error] Error: There was an error deploying functions
