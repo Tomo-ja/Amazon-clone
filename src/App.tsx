@@ -78,3 +78,4 @@ export default App;
 // to use this app, 
 // $firebase emulators:start on amazon/functions
 // $npm start on amazon
+// resource https://youtu.be/RDV3Z1KCBvo?t=29462
